@@ -31,10 +31,10 @@ def plot_lines(img, lines, color=(255, 0, 255)):
         x0 = a*rho
         y0 = b*rho
         
-        x1 = int(x0 + 2000*(-b))
-        y1 = int(y0 + 2000*(a))
-        x2 = int(x0 - 2000*(-b))
-        y2 = int(y0 - 2000*(a))
+        x1 = int(x0 + 1000*(-b))
+        y1 = int(y0 + 1000*(a))
+        x2 = int(x0 - 1000*(-b))
+        y2 = int(y0 - 1000*(a))
         
         newImage= cv2.line(newImage, (x1,y1), (x2,y2), color, 2)
     
