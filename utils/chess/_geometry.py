@@ -31,12 +31,12 @@ def plot_lines(img, lines, color=(255, 0, 255)):
         x0 = a*rho
         y0 = b*rho
         
-        x1 = int(x0 + 2000*(-b))
-        y1 = int(y0 + 2000*(a))
-        x2 = int(x0 - 2000*(-b))
-        y2 = int(y0 - 2000*(a))
+        x1 = int(x0 + 2500*(-b))
+        y1 = int(y0 + 2500*(a))
+        x2 = int(x0 - 2500*(-b))
+        y2 = int(y0 - 2500*(a))
         
-        newImage= cv2.line(newImage, (x1,y1), (x2,y2), color, 2)
+        newImage= cv2.line(newImage, (x1,y1), (x2,y2), color, 3)
     
     plt.imshow(newImage)
     return None
@@ -123,12 +123,12 @@ def get_intersections(img, lines):
         b = np.sin(theta)
         x0 = a*rho
         y0 = b*rho
-        x1, x2 = int(x0 + 2000*(-b)), int(x0 - 2000*(-b))
-        y1, y2 = int(y0 + 2000*(a)), int(y0 - 2000*(a))
+        x1, x2 = int(x0 + 2500*(-b)), int(x0 - 2500*(-b))
+        y1, y2 = int(y0 + 2500*(a)), int(y0 - 2500*(a))
         
         # agregar recta
         mask = np.zeros_like(foo)
-        cv2.line(mask, (x1,y1), (x2,y2), 1, 1)
+        cv2.line(mask, (x1,y1), (x2,y2), 1, 3)
         foo = foo + mask
         
     # obtener puntos de intersección
